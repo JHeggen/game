@@ -1,25 +1,43 @@
-import SpriteSheet from './SpriteSheet.js'
-import {loadTiles, loadLevel} from './loaders.js'
+import Compositor from './Compositor.js'
+import {loadLevel} from './loaders.js'
+import {loadBackgroundSprites, loadPlayerSprite} from './sprites.js'
+import createBackgroundLayer from './layers.js'
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
 
-loadTiles('/assets/tileset.png')
-.then(image => {
-    context.drawImage(image, 60, 560);
-    const sprites = new SpriteSheet(image, 32, 32);
-    sprites.define('ground', 14, 2);
-    sprites.define('eskeleton', 6, 8);
+function createSpriteLayer(sprite, pos) {
+    return function drawSpriteLayer(context) {
+        for (let i = 0; i < 20; ++i) {
+            sprite.draw('idle', context, pos.x + i * 16, pos.y)
+        } 
+    }
+}
 
-    for (let x = 0; x < 15; ++x) {
-        for (let y = 0; y < 15; ++y) {
-            sprites.drawTile('ground', context, x, y);
-        }
+Promise.all([
+    loadPlayerSprite(),
+    loadBackgroundSprites(),
+    loadLevel('1')
+])
+.then(([playerSprite, backgroundSprites, level]) => {
+    const comp = new Compositor();
+    const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
+    comp.layers.push(backgroundLayer);
+
+    const pos = {
+        x: 0,
+        y: 0
+    };
+
+    const spriteLayer = createSpriteLayer(playerSprite, pos);
+    comp.layers.push(spriteLayer);
+
+    function update() {
+        comp.draw(context);
+        pos.x += 2;
+        pos.y += 2;
+        requestAnimationFrame(update);
     }
 
-    sprites.draw('eskeleton', context, 45, 62);
-
-})
-context.beginPath();
-context.rect(0, 0, 480, 480);
-context.stroke();
+    update();
+});

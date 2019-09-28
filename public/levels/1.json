@@ -1,12 +1,13 @@
 {
-        "backgrounds": [
-            {
-                "tile" : "ground",
-                "ranges" : [
+    "backgrounds": [
+        {
+            "tile": "ground",
+            "ranges": [
+                [
                     0, 15,
                     0, 15
                 ]
-            }
-        ]
-
+            ]
+        }
+    ]
 }
