@@ -15,6 +15,7 @@ export function loadBackgroundSprites() {
     .then(image => {
         const sprites = new SpriteSheet(image, 32, 32);
         sprites.defineTile('ground', 14, 2);
+        sprites.defineTile('floor', 15, 0);
         return sprites;
     });    
 }
