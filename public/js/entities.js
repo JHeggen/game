@@ -7,6 +7,7 @@ export function createPlayer() {
     return loadPlayerSprite()
     .then(sprite => {
         const player = new Entity();
+        player.size.set(32, 32);
 
         player.addTrait(new Velocity());
         player.addTrait(new Jump());
