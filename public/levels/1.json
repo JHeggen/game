@@ -1,4 +1,6 @@
 {
+    "spriteSheet": "overworld",
+    "_comment": "[xStart, xLen, yStart, yLen], [xStart, xLen, yStart, 1], [xStart, 1, yStart, 1]",
     "backgrounds": [
         {
             "tile": "ground",
@@ -13,8 +15,7 @@
             "tile": "floor",
             "ranges": [
                 [
-                    0, 55,
-                    14, 1
+                    0, 55, 14
                 ]
             ]
         },
@@ -22,8 +23,7 @@
             "tile": "ground",
             "ranges": [
                 [
-                    20, 2,
-                    14, 1
+                    20, 2, 14
                 ]
             ]
         },
@@ -41,9 +41,12 @@
                 [
                     14, 1,
                     12, 2
+                ],
+                [
+                    2,
+                    11
                 ]
             ]
         }
-
     ]
 }

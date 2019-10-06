@@ -1,0 +1,16 @@
+{
+    "imageURL": "/assets/tileset.png",
+    "tileW": "32",
+    "tileH": "32",
+    "tiles": [
+        {
+            "name": "ground",
+            "index": [14, 2]
+        },
+        {
+            "name": "floor",
+            "index": [15, 0]
+        }
+    ]
+
+}
