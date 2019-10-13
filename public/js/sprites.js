@@ -5,7 +5,7 @@ export function loadPlayerSprite() {
     return loadImage('/assets/tileset.png')
     .then(image => {
         const sprites = new SpriteSheet(image, 32, 32);
-        sprites.defineTile('idle', 6, 8);
+        sprites.defineTile('idle', 6, 12);
         return sprites;
     });    
 }

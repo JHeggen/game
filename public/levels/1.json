@@ -7,15 +7,25 @@
             "ranges": [
                 [
                     0, 55,
-                    0, 14
+                    0, 64
                 ]
             ]
         },
         {
             "tile": "floor",
+            "type": "solid",
             "ranges": [
                 [
                     0, 55, 14
+                ]
+            ]
+        },
+        {
+            "tile": "pot",
+            "type": "solid",
+            "ranges": [
+                [
+                    13, 13
                 ]
             ]
         },
@@ -29,6 +39,7 @@
         },
         {
             "tile": "floor",
+            "type": "solid",
             "ranges": [            
                 [
                     0, 1,

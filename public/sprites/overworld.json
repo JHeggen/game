@@ -5,11 +5,15 @@
     "tiles": [
         {
             "name": "ground",
-            "index": [14, 2]
+            "index": [8, 6]
         },
         {
             "name": "floor",
-            "index": [15, 0]
+            "index": [11, 0]
+        },
+        {
+            "name": "pot",
+            "index": [4, 2]
         }
     ]
 
