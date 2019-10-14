@@ -1,0 +1,24 @@
+{
+    "imageURL": "/assets/tileset.png",
+    "tileW": "32",
+    "tileH": "32",
+    "frames": [
+        {
+            "name": "idle",
+            "rect": [192, 384, 32, 32]
+        },
+        {
+            "name": "move-r1",
+            "rect": [192, 448, 32, 32]
+        },
+        {
+            "name": "move-r2",
+            "rect": [224, 448, 32, 32]
+        },
+        {
+            "name": "move-r3",
+            "rect": [256, 448, 32, 32]
+        }
+    ]
+
+}

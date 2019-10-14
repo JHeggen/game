@@ -17,9 +17,9 @@ Promise.all([
     const camera = new Camera();
     player.pos.set(64, 180);
 
-    level.comp.layers.push(
+    /*level.comp.layers.push(
         //createCollisionLayer(level),
-        createCameraLayer(camera));
+        createCameraLayer(camera));*/
 
     level.entities.add(player);
 
